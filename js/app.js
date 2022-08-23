@@ -1,5 +1,4 @@
 // Botones
-
 const keyC = document.querySelector('#c');
 const keyDelete = document.querySelector('#delete');
 const keyDivide = document.querySelector('#divide');
@@ -23,16 +22,19 @@ const keyPoint = document.querySelector('#point');
 const keyZero = document.querySelector('#zero');
 const keyEqual = document.querySelector('#equal');
 
-
+// Pantallas
 const screen1 = document.getElementById('first-row');
 const screen2 = document.getElementById('second-row');
 
+// Declaracion de variables vacias
 let num1 = [];
 let num2 = [];
 let operation;
 
 let beforeOperation = true;
 
+
+eventListeners();
 
 function eventListeners(){
 
@@ -64,162 +66,64 @@ function eventListeners(){
     keyDelete.addEventListener( 'click', Delete );
 }
 
-eventListeners();
-
 function Seven() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 7 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 7 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
-
+    Operational( 7 );
 }
 
 function Eight() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 8 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 8 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 8 );
 }
 
 function Nine() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 9 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 9 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 9 );
 }
 
 function Four() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 4 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 4 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 4 );
 }
 
 function Five() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 5 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 5 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 5 );
 }
 
 function Six() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 6 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 6 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 6 );
 }
 
 function One() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 1 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 1 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 1 );
 }
 
 function Two() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 2 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 2 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 2 );
 }
 
 function Three() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, 3 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, 3 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
+    Operational( 3 );
 }
 
 function Zero() {
+    Operational( 0 );
+}
+
+function Point() {
+    Operational( '.' );
+}
+
+// Funcion que agrega los numeros al string
+
+function Operational ( num ) {
+
     if ( beforeOperation ){
-        num1 = [ ...num1, 0 ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
+        num1 = num1 + `${ num }`;
         screen1.innerHTML = num1;
     } else {
-        num2 = [ ...num2, 0 ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
+        num2 = num2 + `${ num }`;
         screen1.innerHTML = num2;
     }
 }
 
-function Point() {
-    if ( beforeOperation ){
-        num1 = [ ...num1, '.' ];
-        num1 = num1.toString().replace(/,/g,"");
-        console.log( num1 );
-        screen1.innerHTML = num1;
-    } else {
-        num2 = [ ...num2, '.' ];
-        num2 = num2.toString().replace(/,/g,"");
-        console.log( num2 );
-        screen1.innerHTML = num2;
-    }
-}
+// Funciones de operacion
 
 function Plus() {
     beforeOperation = false;
@@ -239,6 +143,26 @@ function Divide() {
 function Minus() {
     beforeOperation = false;
     operation = 'minus';
+}
+
+// Funciones de teclas especiales
+
+function C() {
+    beforeOperation = true;
+    num1 = '';
+    num2 = '';
+    screen1.innerHTML = '';
+    screen2.innerHTML = '';
+}
+
+function Delete() {
+    if ( beforeOperation ){
+        num1 = num1.substring( 0, num1.length - 1 );
+        screen1.innerHTML = num1;
+    } else {
+        num2 = num2.substring( 0, num2.length - 1 );
+        screen1.innerHTML = num2;
+    }
 }
 
 function Equal() {
@@ -268,26 +192,4 @@ function Equal() {
             break;
     }
     screen2.innerHTML = num1;
-}
-
-function C() {
-
-    beforeOperation = true;
-
-    num1 = '';
-    num2 = '';
-    screen1.innerHTML = '';
-    screen2.innerHTML = '';
-}
-
-function Delete() {
-    if ( beforeOperation ){
-        num1 = num1.substring( 0, num1.length - 1 );
-        screen1.innerHTML = num1;
-        console.log( num1 );
-    } else {
-        num2 = num2.substring( 0, num2.length - 1 );
-        screen1.innerHTML = num2;
-        console.log( num2 );
-    }
 }
