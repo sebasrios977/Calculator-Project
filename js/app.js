@@ -127,21 +127,25 @@ function Operational ( num ) {
 
 function Plus() {
     beforeOperation = false;
+    num2 = '';
     operation = 'plus';
 }
 
 function Multiply() {
     beforeOperation = false;
+    num2 = '';
     operation = 'multiply';
 }
 
 function Divide() {
     beforeOperation = false;
+    num2 = '';
     operation = 'divide';
 }
 
 function Minus() {
     beforeOperation = false;
+    num2 = '';
     operation = 'minus';
 }
 
@@ -149,6 +153,7 @@ function Minus() {
 
 function C() {
     beforeOperation = true;
+    
     num1 = '';
     num2 = '';
     screen1.innerHTML = '';
@@ -167,27 +172,21 @@ function Delete() {
 
 function Equal() {
 
-    beforeOperation = true;
-
     switch ( operation ){
         case 'plus':
             num1 = Number( num1 ) + Number( num2 );
-            num2 = '';
             console.log( num1 );
             break;
         case 'multiply':
             num1 = Number( num1 ) * Number( num2 );
-            num2 = '';
             console.log( num1 );
             break;
         case 'divide':
             num1 = Number( num1 ) / Number( num2 );
-            num2 = '';
             console.log( num1 );
             break;
         case 'minus':
             num1 = Number( num1 ) - Number( num2 );
-            num2 = '';
             console.log( num1 );
             break;
     }
