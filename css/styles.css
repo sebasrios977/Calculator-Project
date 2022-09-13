@@ -56,8 +56,10 @@ button:active {
     border-radius: 7px;
     background-color: #DDDDDD;
     -webkit-box-shadow: 3px 3px 0px 0px rgba(32,140,127,1);
--moz-box-shadow: 3px 3px 0px 0px rgba(32,140,127,1);
-box-shadow: 3px 3px 0px 0px rgba(32,140,127,1);
+    -moz-box-shadow: 3px 3px 0px 0px rgba(32,140,127,1);
+    box-shadow: 3px 3px 0px 0px rgba(32,140,127,1);
+    text-align: end;
+    padding-right: 5px;
 }
 
 /* Configuracion de las teclas */
